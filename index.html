@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AmirMohammad Projects</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;min-height:100vh;color:#fff;
+ font-family:Tahoma,"Segoe UI",sans-serif;
+ background:#020914 url("background.png") center top/cover fixed no-repeat;
+}
+body:before{
+ content:"";position:fixed;inset:0;z-index:-1;
+ background:linear-gradient(180deg,rgba(1,8,20,.35),rgba(1,7,17,.88));
+}
+.container{width:min(1180px,92%);margin:auto}
+.nav{
+ margin-top:22px;padding:14px 20px;border:1px solid rgba(130,190,255,.25);
+ background:rgba(4,17,35,.72);backdrop-filter:blur(16px);
+ border-radius:20px;display:flex;align-items:center;justify-content:space-between;gap:15px
+}
+.logo{font-size:21px;font-weight:800}.logo span{color:#35a7ff}
+.navlinks{display:flex;gap:8px;flex-wrap:wrap}
+.navlinks button,.hero button,.download{
+ border:1px solid rgba(120,190,255,.28);background:rgba(10,35,65,.72);
+ color:white;border-radius:12px;padding:10px 15px;cursor:pointer;font-weight:700
+}
+.navlinks button.active,.hero .primary,.download{background:linear-gradient(135deg,#087cf0,#18a5ff);border-color:transparent}
+.hero{padding:80px 25px 70px;max-width:760px}
+.badge{color:#9bcfff;margin-bottom:15px}
+h1{font-size:clamp(35px,6vw,64px);margin:0 0 15px}
+h1 span{color:#25a7ff}
+.hero p{font-size:18px;line-height:2;color:#d6e2f0}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
+.section{padding:30px 0 70px}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px}
+.filters button{border:1px solid rgba(130,190,255,.25);background:rgba(5,20,39,.72);color:#fff;padding:10px 15px;border-radius:12px;cursor:pointer}
+.filters button.active{background:#148df4}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.card{
+ background:rgba(5,19,37,.78);border:1px solid rgba(130,190,255,.2);
+ backdrop-filter:blur(14px);border-radius:20px;overflow:hidden;
+ box-shadow:0 15px 40px rgba(0,0,0,.25)
+}
+.cardimg{height:150px;display:grid;place-items:center;font-size:60px;background:linear-gradient(135deg,rgba(0,128,255,.18),rgba(130,60,255,.12))}
+.cardbody{padding:19px}
+.card h2{margin:0 0 8px;font-size:20px}
+.card p{color:#b9c9da;line-height:1.8;min-height:58px}
+.meta{display:flex;justify-content:space-between;color:#8fa4ba;font-size:12px;margin:15px 0}
+.download{width:100%;font-size:15px}
+footer{border-top:1px solid rgba(130,190,255,.18);padding:25px 0;color:#8fa4ba;text-align:center}
+.hidden{display:none}
+@media(max-width:700px){.nav{flex-direction:column;align-items:stretch}.navlinks{justify-content:center}.hero{padding:55px 10px}.hero p{font-size:15px}}
+</style>
+</head>
+<body>
+<div class="container">
+<nav class="nav">
+  <div class="logo">💻 AmirMohammad <span>Projects</span></div>
+  <div class="navlinks">
+    <button class="active" onclick="showTab('projects',this)">پروژه‌ها</button>
+    <button onclick="showTab('about',this)">درباره من</button>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="badge">🚀 به دنیای پروژه‌ها خوش آمدید</div>
+  <h1>AmirMohammad <span>Projects</span></h1>
+  <p>مرکز دانلود برنامه‌ها و پروژه‌هایی که با Python، هوش مصنوعی و تکنولوژی‌های مختلف می‌سازیم.</p>
+  <div class="actions">
+    <button class="primary" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">⬇️ مشاهده پروژه‌ها</button>
+    <button onclick="alert('به‌زودی لینک‌های اجتماعی اینجا قرار می‌گیرند.')">🌐 گیت‌هاب من</button>
+  </div>
+</section>
+
+<section id="projects" class="section">
+  <div class="filters">
+    <button class="active" onclick="filterCards('all',this)">همه</button>
+    <button onclick="filterCards('calc',this)">ماشین‌حساب</button>
+    <button onclick="filterCards('game',this)">بازی‌ها</button>
+    <button onclick="filterCards('ai',this)">هوش مصنوعی</button>
+    <button onclick="filterCards('audio',this)">ابزارهای صوتی</button>
+  </div>
+
+  <div class="grid">
+    <article class="card" data-cat="calc ai">
+      <div class="cardimg">🧮🤖</div><div class="cardbody">
+        <h2>ماشین‌حساب هوشمند AI</h2>
+        <p>ماشین‌حساب گرافیکی با قابلیت تحلیل سؤال‌های ریاضی توسط هوش مصنوعی.</p>
+        <div class="meta"><span>نسخه 1.0.0</span><span>Python</span></div>
+        <button class="download" onclick="downloadInfo('ماشین‌حساب هوشمند AI')">⬇️ دانلود</button>
+      </div>
+    </article>
+
+    <article class="card" data-cat="game">
+      <div class="cardimg">🔫🎮</div><div class="cardbody">
+        <h2>Project Strike</h2>
+        <p>بازی FPS سبک ساخته‌شده با Python که مرحله‌به‌مرحله توسعه پیدا می‌کند.</p>
+        <div class="meta"><span>نسخه 0.1.0</span><span>Python</span></div>
+        <button class="download" onclick="downloadInfo('Project Strike')">⬇️ دانلود</button>
+      </div>
+    </article>
+
+    <article class="card" data-cat="ai">
+      <div class="cardimg">🤖🧠</div><div class="cardbody">
+        <h2>پروژه‌های هوش مصنوعی</h2>
+        <p>مجموعه ابزارها و برنامه‌های AI که در آینده به سایت اضافه می‌شوند.</p>
+        <div class="meta"><span>نسخه 1.0.0</span><span>AI</span></div>
+        <button class="download" onclick="downloadInfo('پروژه‌های هوش مصنوعی')">⬇️ دانلود</button>
+      </div>
+    </article>
+
+    <article class="card" data-cat="audio">
+      <div class="cardimg">🎵🎙️</div><div class="cardbody">
+        <h2>ابزارهای صوتی</h2>
+        <p>ابزارهای پردازش صدا و پروژه‌های صوتی آینده در این بخش قرار می‌گیرند.</p>
+        <div class="meta"><span>نسخه 1.0.0</span><span>Audio</span></div>
+        <button class="download" onclick="downloadInfo('ابزارهای صوتی')">⬇️ دانلود</button>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="about" class="section hidden">
+  <div class="card"><div class="cardbody">
+    <h2>👨‍💻 درباره سایت</h2>
+    <p>این سایت مرکز پروژه‌ها و برنامه‌هایی است که به مرور ساخته و منتشر می‌شوند.</p>
+  </div></div>
+</section>
+
+<footer>ساخته شده با ❤️ و Python — AmirMohammad Projects</footer>
+</div>
+
+<script>
+function showTab(tab,btn){
+ document.querySelectorAll('.navlinks button').forEach(x=>x.classList.remove('active'));
+ btn.classList.add('active');
+ document.getElementById('projects').classList.toggle('hidden',tab!=='projects');
+ document.getElementById('about').classList.toggle('hidden',tab!=='about');
+}
+function filterCards(cat,btn){
+ document.querySelectorAll('.filters button').forEach(x=>x.classList.remove('active'));
+ btn.classList.add('active');
+ document.querySelectorAll('.card[data-cat]').forEach(c=>{
+   c.style.display=(cat==='all'||c.dataset.cat.split(' ').includes(cat))?'block':'none';
+ });
+}
+function downloadInfo(name){
+ alert('📥 فایل واقعی «'+name+'» هنوز اضافه نشده است. وقتی پروژه را ساختیم، فایل EXE/ZIP آن را به همین دکمه وصل می‌کنیم.');
+}
+</script>
+</body>
+</html>
