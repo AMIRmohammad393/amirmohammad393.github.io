@@ -4,7 +4,7 @@ import threading
 from openai import OpenAI
 
 # Put your Groq API key here.
-API_KEY = "YOUR_GROQ_API_KEY"
+API_KEY = "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"
 
 client = OpenAI(
     api_key=API_KEY,
