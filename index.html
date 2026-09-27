@@ -148,7 +148,12 @@ function filterCards(cat,btn){
  });
 }
 function downloadInfo(name){
- alert('📥 فایل واقعی «'+name+'» هنوز اضافه نشده است. وقتی پروژه را ساختیم، فایل EXE/ZIP آن را به همین دکمه وصل می‌کنیم.');
+    const link = document.createElement("a");
+    link.href = "SmartCalculator_AI.py";
+    link.download = "SmartCalculator_AI.py";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
 }
 </script>
 </body>
