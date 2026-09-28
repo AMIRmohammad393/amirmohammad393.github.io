@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://amirmohammad393.github.io/sitemap.xml
