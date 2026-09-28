@@ -2,19 +2,10 @@
 <html lang="fa" dir="rtl">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>AmirMohammad Projects</title>
-
-<meta name="description"
-content="سایت AmirMohammad شامل پروژه‌های پایتون، آموزش برنامه‌نویسی، ماشین حساب هوشمند، بازی‌های پایتون و ابزارهای کاربردی.">
-
-<meta name="keywords"
-content="پایتون, Python, آموزش پایتون, پروژه پایتون, برنامه نویسی پایتون">
-
-<meta name="robots" content="index, follow">
 
 <style>
 
@@ -22,21 +13,17 @@ content="پایتون, Python, آموزش پایتون, پروژه پایتون,
     box-sizing:border-box;
 }
 
-html{
-    scroll-behavior:smooth;
-}
-
 body{
     margin:0;
     min-height:100vh;
-    color:#fff;
-    font-family:Tahoma,"Segoe UI",sans-serif;
+    color:white;
+    font-family:Tahoma, Arial, sans-serif;
 
     background:#020914 url("background.png")
     center top/cover fixed no-repeat;
 }
 
-body:before{
+body::before{
     content:"";
     position:fixed;
     inset:0;
@@ -50,23 +37,23 @@ body:before{
 }
 
 .container{
-    width:min(1180px,92%);
+    width:92%;
+    max-width:1150px;
     margin:auto;
 }
 
-/* نوار بالا */
+
+/* ================= NAVBAR ================= */
 
 .nav{
-    margin-top:22px;
-    padding:14px 20px;
+    margin-top:25px;
+    padding:15px 20px;
 
-    border:1px solid rgba(130,190,255,.25);
+    background:rgba(5,20,40,.85);
 
-    background:rgba(4,17,35,.72);
+    border:1px solid rgba(80,170,255,.25);
 
-    backdrop-filter:blur(16px);
-
-    border-radius:20px;
+    border-radius:18px;
 
     display:flex;
     align-items:center;
@@ -77,7 +64,7 @@ body:before{
 
 .logo{
     font-size:21px;
-    font-weight:800;
+    font-weight:bold;
 }
 
 .logo span{
@@ -91,19 +78,21 @@ body:before{
 }
 
 .navlinks button{
-    border:1px solid rgba(120,190,255,.28);
+    padding:10px 15px;
 
-    background:rgba(10,35,65,.72);
+    border:none;
+
+    border-radius:10px;
+
+    background:#102c4d;
 
     color:white;
 
-    border-radius:12px;
-
-    padding:10px 15px;
-
     cursor:pointer;
 
-    font-weight:700;
+    font-family:inherit;
+
+    font-weight:bold;
 }
 
 .navlinks button:hover{
@@ -111,175 +100,123 @@ body:before{
 }
 
 .navlinks button.active{
-    background:linear-gradient(
-        135deg,
-        #087cf0,
-        #18a5ff
-    );
-
-    border-color:transparent;
+    background:#087cf0;
 }
 
-/* صفحه اصلی */
+
+/* ================= HERO ================= */
 
 .hero{
-    padding:80px 25px 70px;
-    max-width:900px;
-}
-
-.badge{
-    color:#9bcfff;
-    margin-bottom:15px;
+    padding:80px 20px 60px;
 }
 
 .hero h1{
-    font-size:clamp(35px,6vw,64px);
-    margin:0 0 15px;
+    font-size:55px;
+    margin-bottom:15px;
 }
 
 .hero h1 span{
-    color:#25a7ff;
+    color:#35a7ff;
 }
 
 .hero p{
+    color:#d1d5db;
     font-size:18px;
     line-height:2;
-    color:#d6e2f0;
 }
 
-.actions{
-    display:flex;
-    gap:12px;
-    flex-wrap:wrap;
-    margin-top:25px;
-}
 
-.actions button{
-    border:1px solid rgba(120,190,255,.28);
-
-    background:rgba(10,35,65,.72);
-
-    color:white;
-
-    border-radius:12px;
-
-    padding:12px 18px;
-
-    cursor:pointer;
-
-    font-weight:700;
-}
-
-.actions .primary{
-    background:linear-gradient(
-        135deg,
-        #087cf0,
-        #18a5ff
-    );
-
-    border-color:transparent;
-}
-
-/* بخش‌ها */
+/* ================= SECTIONS ================= */
 
 .section{
-    padding:30px 0 70px;
+    padding:20px 0 70px;
 }
 
 .hidden{
     display:none !important;
 }
 
-/* فیلترها */
+
+/* ================= FILTERS ================= */
 
 .filters{
     display:flex;
     gap:10px;
     flex-wrap:wrap;
 
-    margin-bottom:22px;
+    margin-bottom:25px;
 }
 
 .filters button{
-    border:1px solid rgba(130,190,255,.25);
+    padding:10px 16px;
 
-    background:rgba(5,20,39,.72);
+    border:none;
 
-    color:#fff;
+    border-radius:10px;
 
-    padding:10px 15px;
+    background:#102c4d;
 
-    border-radius:12px;
+    color:white;
 
     cursor:pointer;
 }
 
-.filters button:hover{
+.filters button.active{
     background:#087cf0;
 }
 
-.filters button.active{
-    background:#148df4;
-}
 
-/* کارت‌ها */
+/* ================= PROJECTS ================= */
 
 .grid{
     display:grid;
 
     grid-template-columns:
-    repeat(auto-fit,minmax(240px,1fr));
+    repeat(auto-fit,minmax(250px,1fr));
 
-    gap:18px;
+    gap:20px;
 }
 
 .card{
-    background:rgba(5,19,37,.78);
+    background:rgba(5,20,40,.88);
 
-    border:1px solid rgba(130,190,255,.2);
+    border:1px solid rgba(80,170,255,.2);
 
-    backdrop-filter:blur(14px);
-
-    border-radius:20px;
+    border-radius:18px;
 
     overflow:hidden;
 
     box-shadow:
-    0 15px 40px rgba(0,0,0,.25);
+    0 15px 35px rgba(0,0,0,.25);
 }
 
 .cardimg{
     height:150px;
 
-    display:grid;
+    display:flex;
 
-    place-items:center;
+    align-items:center;
+    justify-content:center;
 
     font-size:60px;
 
-    background:
-    linear-gradient(
-        135deg,
-        rgba(0,128,255,.18),
-        rgba(130,60,255,.12)
-    );
+    background:rgba(20,80,140,.25);
 }
 
 .cardbody{
-    padding:19px;
+    padding:20px;
 }
 
-.card h2{
-    margin:0 0 8px;
-    font-size:20px;
+.cardbody h2{
+    margin-top:0;
+
+    color:#35a7ff;
 }
 
-.card p{
-    color:#b9c9da;
+.cardbody p{
+    color:#cbd5e1;
 
-    line-height:1.8;
-
-    min-height:58px;
+    line-height:1.9;
 }
 
 .meta{
@@ -287,9 +224,9 @@ body:before{
 
     justify-content:space-between;
 
-    color:#8fa4ba;
+    color:#94a3b8;
 
-    font-size:12px;
+    font-size:13px;
 
     margin:15px 0;
 }
@@ -297,104 +234,48 @@ body:before{
 .download{
     width:100%;
 
+    padding:12px;
+
     border:none;
 
-    background:linear-gradient(
-        135deg,
-        #087cf0,
-        #18a5ff
-    );
+    border-radius:10px;
+
+    background:#087cf0;
 
     color:white;
 
-    border-radius:12px;
-
-    padding:12px;
-
     cursor:pointer;
-
-    font-size:15px;
 
     font-weight:bold;
 }
 
 .download:hover{
-    opacity:.9;
+    background:#18a5ff;
 }
 
-/* کارت آب و هوا */
 
-.project-card{
-    margin-top:18px;
-
-    padding:25px;
-
-    background:rgba(5,19,37,.78);
-
-    border:1px solid rgba(130,190,255,.2);
-
-    border-radius:20px;
-
-    text-align:center;
-}
-
-.project-card h3{
-    font-size:24px;
-
-    color:#35a7ff;
-}
-
-.project-card p{
-    color:#cbd5e1;
-
-    line-height:2;
-}
-
-.download-btn{
-    display:inline-block;
-
-    padding:12px 20px;
-
-    background:linear-gradient(
-        135deg,
-        #087cf0,
-        #18a5ff
-    );
-
-    color:white;
-
-    border-radius:12px;
-
-    text-decoration:none;
-
-    font-weight:bold;
-}
-
-/* درباره من و آموزش */
+/* ================= INFO BOX ================= */
 
 .info-box{
+
     max-width:900px;
 
     margin:50px auto;
 
     padding:35px;
 
-    background:rgba(10,25,50,.9);
+    background:rgba(10,25,50,.92);
 
     color:white;
 
     border-radius:20px;
 
-    font-family:Tahoma;
-
     line-height:2.4;
 
-    text-align:right;
-
-    border:1px solid rgba(130,190,255,.2);
+    border:1px solid rgba(80,170,255,.2);
 
     box-shadow:
-    0 15px 40px rgba(0,0,0,.25);
+    0 15px 40px rgba(0,0,0,.3);
 }
 
 .info-box h1{
@@ -402,7 +283,7 @@ body:before{
 
     font-size:34px;
 
-    margin-bottom:25px;
+    margin-top:0;
 }
 
 .info-box h2{
@@ -412,12 +293,13 @@ body:before{
 }
 
 .info-box p{
-    color:#dbeafe;
+    color:#e2e8f0;
 }
 
-/* دکمه دانلود VS Code */
 
-.vscode-download{
+/* ================= LINKS ================= */
+
+.download-link{
     display:inline-block;
 
     padding:13px 25px;
@@ -435,47 +317,40 @@ body:before{
     margin:10px 0 20px;
 }
 
-.vscode-download:hover{
+.download-link:hover{
     background:#18a5ff;
 }
 
-/* فوتر */
+
+/* ================= FOOTER ================= */
 
 footer{
-    border-top:1px solid rgba(130,190,255,.18);
-
-    padding:25px 0;
-
-    color:#8fa4ba;
-
     text-align:center;
 
-    margin-top:30px;
+    padding:30px 0;
+
+    color:#94a3b8;
+
+    border-top:1px solid rgba(80,170,255,.2);
+
+    margin-top:40px;
 }
 
-/* موبایل */
+
+/* ================= MOBILE ================= */
 
 @media(max-width:700px){
 
     .nav{
         flex-direction:column;
-        align-items:stretch;
+    }
+
+    .hero h1{
+        font-size:38px;
     }
 
     .navlinks{
         justify-content:center;
-    }
-
-    .navlinks button{
-        flex:1;
-    }
-
-    .hero{
-        padding:55px 10px;
-    }
-
-    .hero p{
-        font-size:15px;
     }
 
 }
@@ -525,34 +400,16 @@ footer{
 
 <section class="hero">
 
-    <div class="badge">
-        🚀 به دنیای پروژه‌ها خوش آمدید
-    </div>
-
     <h1>
         AmirMohammad
         <span>Projects</span>
     </h1>
 
     <p>
-        مرکز دانلود برنامه‌ها و پروژه‌هایی که با
-        Python، هوش مصنوعی و تکنولوژی‌های مختلف می‌سازیم.
+        به سایت پروژه‌های امیرمحمد خوش آمدید.
+        در این سایت پروژه‌های Python و برنامه‌های
+        مختلف قرار می‌گیرند.
     </p>
-
-    <div class="actions">
-
-        <button
-        class="primary"
-        onclick="showTabByButton('projects')">
-            ⬇️ مشاهده پروژه‌ها
-        </button>
-
-        <button
-        onclick="window.open('https://github.com/AMIRmohammad393','_blank')">
-            🌐 گیت‌هاب من
-        </button>
-
-    </div>
 
 </section>
 
@@ -561,35 +418,29 @@ footer{
 
 <section
 id="projects"
-class="section"
-dir="rtl">
+class="section">
 
     <div class="filters">
 
         <button
         class="active"
-        onclick="filterCards('all',this)">
+        onclick="filterProjects('all',this)">
             همه پروژه‌ها
         </button>
 
         <button
-        onclick="filterCards('calc',this)">
-            🧮 ماشین‌حساب
+        onclick="filterProjects('python',this)">
+            🐍 Python
         </button>
 
         <button
-        onclick="filterCards('game',this)">
-            🎮 بازی‌ها
-        </button>
-
-        <button
-        onclick="filterCards('ai',this)">
+        onclick="filterProjects('ai',this)">
             🤖 هوش مصنوعی
         </button>
 
         <button
-        onclick="filterCards('audio',this)">
-            🎵 ابزارهای صوتی
+        onclick="filterProjects('game',this)">
+            🎮 بازی
         </button>
 
     </div>
@@ -600,9 +451,9 @@ dir="rtl">
 
         <!-- ماشین حساب -->
 
-        <article
+        <div
         class="card"
-        data-cat="calc ai">
+        data-category="python ai">
 
             <div class="cardimg">
                 🧮🤖
@@ -611,90 +462,37 @@ dir="rtl">
             <div class="cardbody">
 
                 <h2>
-                    ماشین‌حساب هوشمند AI
+                    ماشین حساب هوشمند
                 </h2>
 
                 <p>
-                    ماشین‌حساب گرافیکی با قابلیت
-                    تحلیل سؤال‌های ریاضی توسط هوش مصنوعی.
+                    ماشین حساب ساخته شده با Python
+                    با قابلیت اتصال به هوش مصنوعی.
                 </p>
 
                 <div class="meta">
-
-                    <span>
-                        نسخه 1.0.0
-                    </span>
-
-                    <span>
-                        Python
-                    </span>
-
+                    <span>Python</span>
+                    <span>AI</span>
                 </div>
 
                 <button
                 class="download"
-                onclick="downloadCalculator()">
+                onclick="alert('فایل ماشین حساب را در همین پوشه قرار دهید.')">
 
-                    ⬇️ دانلود ماشین‌حساب
+                    ⬇️ دانلود
 
                 </button>
 
             </div>
 
-        </article>
+        </div>
 
 
-        <!-- هوش مصنوعی -->
+        <!-- آب و هوا -->
 
-        <article
+        <div
         class="card"
-        data-cat="ai">
-
-            <div class="cardimg">
-                🤖🧠
-            </div>
-
-            <div class="cardbody">
-
-                <h2>
-                    پروژه‌های هوش مصنوعی
-                </h2>
-
-                <p>
-                    مجموعه ابزارها و برنامه‌های
-                    هوش مصنوعی که در آینده به سایت اضافه می‌شوند.
-                </p>
-
-                <div class="meta">
-
-                    <span>
-                        نسخه 1.0.0
-                    </span>
-
-                    <span>
-                        AI
-                    </span>
-
-                </div>
-
-                <button
-                class="download"
-                onclick="alert('این پروژه به‌زودی منتشر می‌شود.')">
-
-                    🚀 به‌زودی
-
-                </button>
-
-            </div>
-
-        </article>
-
-
-        <!-- Smart Weather -->
-
-        <article
-        class="card"
-        data-cat="ai">
+        data-category="python">
 
             <div class="cardimg">
                 🌤️
@@ -707,80 +505,65 @@ dir="rtl">
                 </h2>
 
                 <p>
-                    برنامه آب‌وهوای شهرهای سراسر جهان
-                    ساخته شده با Python.
+                    برنامه آب و هوا ساخته شده با Python.
                 </p>
 
                 <div class="meta">
-
-                    <span>
-                        Python
-                    </span>
-
-                    <span>
-                        Weather
-                    </span>
-
+                    <span>Python</span>
+                    <span>Weather</span>
                 </div>
 
                 <a
                 href="SmartWeather.zip"
                 download
-                class="download-btn">
+                class="download-link">
 
-                    📦 دانلود Smart Weather
+                    📦 دانلود برنامه
 
                 </a>
 
             </div>
 
-        </article>
+        </div>
 
 
-        <!-- درباره سایت -->
+        <!-- بازی -->
 
-        <article
+        <div
         class="card"
-        data-cat="ai">
+        data-category="game">
 
             <div class="cardimg">
-                👨‍💻
+                🎮
             </div>
 
             <div class="cardbody">
 
                 <h2>
-                    درباره سایت
+                    بازی‌های Python
                 </h2>
 
                 <p>
-                    این سایت مرکز پروژه‌ها و برنامه‌هایی
-                    است که به مرور ساخته و منتشر می‌شوند.
+                    بازی‌های ساخته شده با Python
+                    که به مرور در سایت قرار می‌گیرند.
                 </p>
 
                 <div class="meta">
-
-                    <span>
-                        AmirMohammad
-                    </span>
-
-                    <span>
-                        Python
-                    </span>
-
+                    <span>Python</span>
+                    <span>Game</span>
                 </div>
 
                 <button
                 class="download"
-                onclick="showTabByButton('about')">
+                onclick="alert('این پروژه به‌زودی منتشر می‌شود.')">
 
-                    👤 درباره من
+                    🚀 به‌زودی
 
                 </button>
 
             </div>
 
-        </article>
+        </div>
 
 
     </div>
@@ -792,8 +575,7 @@ dir="rtl">
 
 <section
 id="about"
-class="hidden"
-dir="rtl">
+class="hidden">
 
     <div class="info-box">
 
@@ -802,23 +584,21 @@ dir="rtl">
         </h1>
 
         <p>
-            سلام دوستان، بنده
+            سلام دوستان بنده
             <strong>امیرمحمد سلیمانی</strong>
             هستم.
         </p>
 
         <p>
-            بنده <strong>15 ساله</strong> هستم و ساکن تهران.
-            قبل از هر چیز، هدف بنده از تشکیل این سایت
-            کمک به دانش‌آموزان پایتونی است و قصد کمک به
-            آنها را دارم.
+            بنده <strong>15 ساله</strong> هستم ساکن تهران،
+            قبل از هر چیز هدف بنده از تشکیل این سایت
+            کمک به دانش آموزان پایتونی و قصد کمک به آنها را دارم.
         </p>
 
         <p>
-            علاقه‌ی بنده در <strong>پایتون</strong> است
+            علاقه ی بنده در <strong>پایتون</strong> هست
             و بنده در حال تمام کردن پایتون هستم و
-            می‌خواهم به شما کمک کنم بهتر درمورد
-            پایتون بدانید.
+            میخواهم به شما کمک کنم بهتر درمورد پایتون بدانید.
         </p>
 
     </div>
@@ -830,8 +610,7 @@ dir="rtl">
 
 <section
 id="vscode"
-class="hidden"
-dir="rtl">
+class="hidden">
 
     <div class="info-box">
 
@@ -839,12 +618,10 @@ dir="rtl">
             💻 آموزش دانلود و نصب VS Code
         </h1>
 
-
         <p>
             <strong>Visual Studio Code</strong>
-            یک ویرایشگر کد حرفه‌ای است که می‌توان
-            از آن برای برنامه‌نویسی، مخصوصاً Python،
-            استفاده کرد.
+            یک ویرایشگر کد حرفه‌ای است که برای
+            برنامه‌نویسی، مخصوصاً Python، استفاده می‌شود.
         </p>
 
 
@@ -861,7 +638,7 @@ dir="rtl">
         href="https://code.visualstudio.com/download"
         target="_blank"
         rel="noopener"
-        class="vscode-download">
+        class="download-link">
 
             📥 دانلود رسمی VS Code
 
@@ -873,11 +650,9 @@ dir="rtl">
         </h2>
 
         <p>
-            بعد از دانلود، فایل نصب VS Code
-            را باز کنید.
-
-            برای بیشتر کاربران ویندوز،
-            گزینه <strong>User Installer</strong>
+            بعد از دانلود، فایل نصب VS Code را باز کنید.
+            برای بیشتر کاربران ویندوز، گزینه
+            <strong>User Installer</strong>
             مناسب است.
         </p>
 
@@ -887,8 +662,8 @@ dir="rtl">
         </h2>
 
         <p>
-            مراحل نصب را ادامه دهید و در پایان
-            روی <strong>Install</strong>
+            مراحل نصب را ادامه دهید و در پایان روی
+            <strong>Install</strong>
             کلیک کنید.
         </p>
 
@@ -899,44 +674,28 @@ dir="rtl">
 
         <p>
             بعد از نصب، VS Code را باز کنید.
-            حالا می‌توانید یک پوشه برای پروژه
-            خود باز کنید و برنامه‌نویسی را شروع کنید.
+            حالا می‌توانید یک پوشه برای پروژه خود
+            باز کنید و شروع به برنامه‌نویسی کنید.
         </p>
 
 
         <h2>
-            🐍 مرحله ۵ — آماده‌سازی برای Python
+            🐍 مرحله ۵ — نصب افزونه Python
         </h2>
 
         <p>
-            اگر قصد برنامه‌نویسی Python دارید،
-            ابتدا Python را نصب کنید و سپس در
-            VS Code افزونه Python را نصب کنید.
+            در VS Code وارد قسمت
+            <strong>Extensions</strong>
+            شوید و افزونه
+            <strong>Python</strong>
+            را نصب کنید.
         </p>
 
 
         <p>
-            برای شروع می‌توانید یک فایل با پسوند
+            سپس می‌توانید یک فایل با پسوند
             <strong>.py</strong>
-            بسازید.
-        </p>
-
-
-        <hr
-        style="
-        border-color:#334155;
-        margin:30px 0;
-        ">
-
-
-        <p
-        style="
-        text-align:center;
-        color:#9ca3af;
-        ">
-
-            آموزش دانلود و نصب Visual Studio Code
-
+            بسازید و برنامه‌نویسی Python را شروع کنید.
         </p>
 
     </div>
@@ -948,8 +707,7 @@ dir="rtl">
 
 <footer>
 
-    ❤️ ساخته شده با Python —
-    AmirMohammad Projects
+    ❤️ ساخته شده توسط امیرمحمد سلیمانی
 
 </footer>
 
@@ -961,12 +719,7 @@ dir="rtl">
 
 <script>
 
-
-/* نمایش تب‌ها */
-
-function showTab(tab, btn){
-
-    // مخفی کردن همه بخش‌ها
+function showTab(tab,btn){
 
     document
     .getElementById("projects")
@@ -981,14 +734,10 @@ function showTab(tab, btn){
     .classList.add("hidden");
 
 
-    // نمایش بخش انتخاب شده
-
     document
     .getElementById(tab)
     .classList.remove("hidden");
 
-
-    // فعال کردن دکمه
 
     document
     .querySelectorAll(".navlinks button")
@@ -999,137 +748,56 @@ function showTab(tab, btn){
     });
 
 
-    if(btn){
-
-        btn.classList.add("active");
-
-    }
-
-
-    // رفتن به بخش
-
-    document
-    .getElementById(tab)
-    .scrollIntoView({
-        behavior:"smooth",
-        block:"start"
-    });
+    btn.classList.add("active");
 
 }
 
 
-/* نمایش تب بدون داشتن دکمه */
-
-function showTabByButton(tab){
-
-    const buttons =
-    document.querySelectorAll(
-        ".navlinks button"
-    );
-
-
-    let targetButton = null;
-
-
-    buttons.forEach(function(button){
-
-        if(
-            (tab === "projects" &&
-            button.innerText.includes("پروژه")) ||
-
-            (tab === "about" &&
-            button.innerText.includes("درباره")) ||
-
-            (tab === "vscode" &&
-            button.innerText.includes("VS Code"))
-        ){
-
-            targetButton = button;
-
-        }
-
-    });
-
-
-    showTab(tab,targetButton);
-
-}
-
-
-/* فیلتر پروژه‌ها */
-
-function filterCards(cat,btn){
+function filterProjects(category,button){
 
     document
     .querySelectorAll(".filters button")
-    .forEach(function(button){
+    .forEach(function(btn){
 
-        button.classList.remove("active");
+        btn.classList.remove("active");
 
     });
 
-
-    btn.classList.add("active");
+    button.classList.add("active");
 
 
     document
-    .querySelectorAll(".card[data-cat]")
+    .querySelectorAll(".card")
     .forEach(function(card){
 
-        if(cat === "all"){
+        if(category === "all"){
 
             card.style.display = "block";
-
-            return;
 
         }
 
+        else{
 
-        const categories =
-        card.dataset.cat.split(" ");
+            const categories =
+            card.dataset.category.split(" ");
 
+            if(categories.includes(category)){
 
-        if(categories.includes(cat)){
+                card.style.display = "block";
 
-            card.style.display = "block";
+            }
 
-        }else{
+            else{
 
-            card.style.display = "none";
+                card.style.display = "none";
+
+            }
 
         }
 
     });
 
 }
-
-
-/* دانلود ماشین حساب */
-
-function downloadCalculator(){
-
-    const link =
-    document.createElement("a");
-
-
-    link.href =
-    "SmartCalculator_AI.py";
-
-
-    link.download =
-    "SmartCalculator_AI.py";
-
-
-    document.body.appendChild(link);
-
-
-    link.click();
-
-
-    document.body.removeChild(link);
-
-}
-
 
 </script>
 
