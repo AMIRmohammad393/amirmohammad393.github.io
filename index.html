@@ -92,7 +92,8 @@ footer{border-top:1px solid rgba(130,190,255,.18);padding:25px 0;color:#8fa4ba;t
 <div class="container">
 <nav class="nav">
   <div class="logo">💻 AmirMohammad <span>Projects</span></div>
-  <div class="navlinks">
+  <div class="navlinks"
+   button onclick="showTab('vscode',this)">💻 آموزش VS Code</button>
     <button class="active" onclick="showTab('projects',this)">پروژه‌ها</button>
     <button onclick="showTab('about',this)">درباره من</button>
   </div>
@@ -161,6 +162,7 @@ function showTab(tab,btn){
  btn.classList.add('active');
  document.getElementById('projects').classList.toggle('hidden',tab!=='projects');
  document.getElementById('about').classList.toggle('hidden',tab!=='about');
+document.getElementById('vscode').classList.toggle('hidden',tab!=='vscode');
 }
 function filterCards(cat,btn){
  document.querySelectorAll('.filters button').forEach(x=>x.classList.remove('active'));
@@ -211,6 +213,112 @@ function downloadInfo(name){
         علاقه‌ی بنده در <strong>پایتون</strong> است و بنده در حال
         تمام کردن پایتون هستم و می‌خواهم به شما کمک کنم بهتر
         درمورد پایتون بدانید.
+    </p>
+ <!-- آموزش VS Code -->
+<section id="vscode" class="section hidden" dir="rtl" style="
+    max-width:900px;
+    margin:50px auto;
+    padding:35px;
+    background:rgba(10,25,50,.9);
+    color:white;
+    border-radius:20px;
+    font-family:Tahoma;
+    line-height:2.4;
+    text-align:right;
+">
+
+    <h1 style="
+        color:#35a7ff;
+        font-size:34px;
+        margin-bottom:25px;
+    ">
+        💻 آموزش دانلود و نصب VS Code
+    </h1>
+
+    <p>
+        <strong>Visual Studio Code</strong> یک ویرایشگر کد است
+        که می‌توان از آن برای برنامه‌نویسی، مخصوصاً Python،
+        استفاده کرد.
+    </p>
+
+    <h2 style="color:#35a7ff;">
+        📥 مرحله ۱ — دانلود VS Code
+    </h2>
+
+    <p>
+        برای دانلود نسخه اصلی و جدید VS Code از سایت رسمی
+        استفاده کنید.
+    </p>
+
+    <a href="https://code.visualstudio.com/download"
+       target="_blank"
+       rel="noopener"
+       style="
+       display:inline-block;
+       padding:13px 25px;
+       background:#087cf0;
+       color:white;
+       border-radius:12px;
+       text-decoration:none;
+       font-weight:bold;
+       margin:10px 0 20px 0;
+       ">
+        📥 دانلود رسمی VS Code
+    </a>
+
+    <h2 style="color:#35a7ff;">
+        🖥️ مرحله ۲ — اجرای Installer
+    </h2>
+
+    <p>
+        بعد از دانلود، فایل نصب VS Code را باز کنید.
+        برای بیشتر کاربران ویندوز، گزینه
+        <strong>User Installer</strong>
+        مناسب است و معمولاً به دسترسی Administrator نیاز ندارد.
+    </p>
+
+    <h2 style="color:#35a7ff;">
+        ⚙️ مرحله ۳ — نصب برنامه
+    </h2>
+
+    <p>
+        مراحل نصب را ادامه دهید و در پایان روی
+        <strong>Install</strong>
+        کلیک کنید.
+    </p>
+
+    <h2 style="color:#35a7ff;">
+        🚀 مرحله ۴ — اجرای VS Code
+    </h2>
+
+    <p>
+        بعد از نصب، VS Code را باز کنید.
+        حالا می‌توانید یک پوشه برای پروژه خود باز کنید و
+        شروع به برنامه‌نویسی کنید.
+    </p>
+
+    <h2 style="color:#35a7ff;">
+        🐍 مرحله ۵ — آماده‌سازی برای Python
+    </h2>
+
+    <p>
+        اگر قصد برنامه‌نویسی Python دارید، ابتدا Python را
+        نصب کنید و سپس در VS Code افزونه Python را نصب کنید.
+    </p>
+
+    <p>
+        برای شروع می‌توانید یک فایل با پسوند
+        <strong>.py</strong>
+        بسازید.
+    </p>
+
+    <hr style="border-color:#334155;margin:30px 0;">
+
+    <p style="
+        text-align:center;
+        color:#9ca3af;
+    ">
+        آموزش دانلود و نصب Visual Studio Code
     </p>
 
 </section>
