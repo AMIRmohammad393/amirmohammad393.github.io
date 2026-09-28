@@ -152,17 +152,25 @@ footer{border-top:1px solid rgba(130,190,255,.18);padding:25px 0;color:#8fa4ba;t
     <p>این سایت مرکز پروژه‌ها و برنامه‌هایی است که به مرور ساخته و منتشر می‌شوند.</p>
   </div></div>
 </section>
-
-<footer>ساخته شده با ❤️ و Python — AmirMohammad Projects</footer>
 </div>
 
 <script>
-function showTab(tab,btn){
- document.querySelectorAll('.navlinks button').forEach(x=>x.classList.remove('active'));
- btn.classList.add('active');
- document.getElementById('projects').classList.toggle('hidden',tab!=='projects');
- document.getElementById('about').classList.toggle('hidden',tab!=='about');
-document.getElementById('vscode').classList.toggle('hidden',tab!=='vscode');
+function showTab(tab, btn) {
+
+    // فعال کردن دکمه انتخاب‌شده
+    document.querySelectorAll('.navlinks button').forEach(function(button) {
+        button.classList.remove('active');
+    });
+
+    btn.classList.add('active');
+
+    // مخفی کردن همه بخش‌ها
+    document.getElementById('projects').classList.add('hidden');
+    document.getElementById('about').classList.add('hidden');
+    document.getElementById('vscode').classList.add('hidden');
+
+    // نمایش بخش انتخاب‌شده
+    document.getElementById(tab).classList.remove('hidden');
 }
 function filterCards(cat,btn){
  document.querySelectorAll('.filters button').forEach(x=>x.classList.remove('active'));
@@ -183,7 +191,7 @@ function downloadInfo(name){
  </script>
 
 <!-- درباره من -->
-<section id="about" dir="rtl">
+<section id="about" dir="rtl" style="
     max-width:900px;
     margin:50px auto;
     padding:35px;
